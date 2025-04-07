@@ -16,7 +16,7 @@
 </script>
 
 <nav
-	class="hidden md:flex flex-col bg-green-sansfiltre items-center justify-evenly gap-12 px-6 py-20 w-[30%] h-screen fixed left-0 top-0 z-50"
+	class="hidden md:flex flex-col shadow-2xl bg-green-sansfiltre items-center justify-evenly gap-12 px-6 py-20 w-[30%] h-screen fixed left-0 top-0 z-50"
 >
 	<!-- Logo wrapped in "Accueil" link -->
 	<div class="logo-container w-full flex justify-center">
