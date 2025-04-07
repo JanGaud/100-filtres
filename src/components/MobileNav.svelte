@@ -1,49 +1,78 @@
 <script lang="ts">
-	import type { ImageFieldImage } from '@prismicio/client';
-	import { PrismicImage } from '@prismicio/svelte';
+	import type { ImageFieldImage, LinkField } from '@prismicio/client';
+	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
+	import { isFilled } from '@prismicio/client';
+	import Icon from '@iconify/svelte';
 
 	export let nav: {
 		logo_state_start: ImageFieldImage;
 		logo_state_scroll: ImageFieldImage;
-		link: {
+		link: (LinkField & {
 			text: string;
-			url?: string;
-			link_type: string;
 			key: string;
 			variant: string;
-		}[];
+		})[];
 	};
 
-	// Extract the "Accueil" link (variant === 'Primary')
 	const accueilLink = nav.link.find((item) => item.variant === 'Primary');
+	let menuOpen = false;
 </script>
 
-<nav class="flex items-center justify-between px-4 py-2">
-	<!-- Logo wrapped in "Accueil" link -->
-	<div class="logo-container relative w-24">
-		{#if accueilLink?.url}
-			<a href={accueilLink.url}>
-				<PrismicImage field={nav.logo_state_start} class="logo-start block" />
-				<PrismicImage field={nav.logo_state_scroll} class="logo-scroll hidden" />
-			</a>
-		{/if}
+<nav class="fixed w-full top-0 z-50">
+	<!-- Top bar -->
+	<div class="flex items-center justify-between px-6 py-4 z-50">
+		<!-- Logo -->
+		<div class="w-28 z-50">
+			{#if accueilLink}
+				<PrismicLink field={accueilLink}>
+					<PrismicImage
+						field={nav.logo_state_start}
+						class="w-full z-50 drop-shadow"
+					/>
+				</PrismicLink>
+			{/if}
+		</div>
+
+		<!-- Burger menu button -->
+		<button
+			type="button"
+			class="z-30"
+			on:click={() => (menuOpen = true)}
+			aria-label="Toggle navigation menu"
+		>
+			<Icon icon="mingcute:menu-line" class="text-green-sansfiltre w-9 h-9" />
+		</button>
 	</div>
 
-	<!-- Navigation Links -->
-	<ul class="flex gap-6">
-		{#each nav.link as item}
-			<li>
-				{#if item.url}
-					<a
-						href={item.url}
-						class={`text-lg ${item.variant === 'Primary' ? 'font-bold' : 'text-gray-600'}`}
-					>
-						{item.text}
-					</a>
-				{:else}
-					<span class="text-lg text-gray-400 cursor-not-allowed">{item.text}</span>
-				{/if}
-			</li>
-		{/each}
-	</ul>
+	<!-- Slide-in menu panel -->
+	<div
+		class={`fixed top-0 right-0 h-screen w-2/3 bg-green-sansfiltre transform transition-transform duration-300 ease-in-out z-40 ${
+			menuOpen ? 'translate-x-0' : 'translate-x-full'
+		}`}
+	>
+		<!-- Close button positioned like open button -->
+		<button
+			type="button"
+			class="absolute top-12 right-6 z-50 text-white hover:text-gray-300"
+			on:click={() => (menuOpen = false)}
+			aria-label="Close menu"
+		>
+			<Icon icon="mingcute:close-line" class="text-white w-10 h-10" />
+		</button>
+
+		<!-- Navigation links -->
+		<ul class="flex flex-col gap-8 px-6 pt-24 text-white text-lg">
+			{#each nav.link as link (link.key)}
+				<li>
+					{#if isFilled.link(link)}
+						<PrismicLink field={link} on:click={() => (menuOpen = false)}>
+							{link.text}
+						</PrismicLink>
+					{:else}
+						<span class="opacity-50 cursor-not-allowed">{link.text}</span>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+	</div>
 </nav>
