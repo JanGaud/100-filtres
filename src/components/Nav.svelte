@@ -16,7 +16,7 @@
 </script>
 
 <nav
-	class="hidden md:flex flex-col shadow-2xl bg-green-sansfiltre items-center justify-evenly gap-12 px-6 py-20 w-[30%] h-screen fixed left-0 top-0 z-50"
+	class="hidden md:flex flex-col rounded-r-xl shadow-2xl bg-green-sansfiltre items-center justify-evenly gap-12 px-6 py-20 w-[30%] h-screen fixed left-0 top-0 z-50"
 >
 	<!-- Logo wrapped in "Accueil" link -->
 	<div class="logo-container w-full flex justify-center">
@@ -31,14 +31,11 @@
 	</div>
 
 	<!-- Navigation Links -->
-	<ul class="flex flex-col items-start gap-6 uppercase">
+	<ul class="h-full flex flex-col justify-evenly items-start gap-6 uppercase">
 		{#each nav.link as link (link.key)}
 			<li>
 				{#if link}
-					<PrismicLink
-						field={link}
-						class="text-lg tracking-widest text-white"
-					>
+					<PrismicLink field={link} class="text-lg tracking-widest text-white drop-shadow-md hover-underline">
 						{link.text}
 					</PrismicLink>
 				{/if}
@@ -46,3 +43,4 @@
 		{/each}
 	</ul>
 </nav>
+
