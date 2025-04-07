@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme{
+    --color-pink-sansfiltre: #FFEBFD;
+    --color-green-sansfiltre: #054236;
+    /* --color-brown-sansfiltre: (#FFEBFD); */
+}
+
 @font-face {
     font-family: 'Lazy Dog';
     src: url('/fonts/lazy_dog.ttf') format('truetype');

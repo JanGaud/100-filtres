@@ -1,0 +1,48 @@
+<script lang="ts">
+	import type { ImageFieldImage, LinkField } from '@prismicio/client';
+	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
+
+	export let nav: {
+		logo_state_start: ImageFieldImage;
+		logo_state_scroll: ImageFieldImage;
+		link: (LinkField & {
+			text: string;
+			key: string;
+			variant: string;
+		})[];
+	};
+
+	const accueilLink = nav.link.find((item) => item.variant === 'Primary');
+</script>
+
+<nav
+	class="hidden md:flex flex-col bg-green-sansfiltre items-center justify-evenly gap-12 px-6 py-20 w-[30%] h-screen fixed left-0 top-0 z-50"
+>
+	<!-- Logo wrapped in "Accueil" link -->
+	<div class="logo-container w-full flex justify-center">
+		{#if accueilLink}
+			<PrismicLink field={accueilLink}>
+				<PrismicImage
+					field={nav.logo_state_start}
+					class="logo-start block w-48 lg:w-52 xl:w-60 drop-shadow drop-shadow-[#ffffffa1]"
+				/>
+			</PrismicLink>
+		{/if}
+	</div>
+
+	<!-- Navigation Links -->
+	<ul class="flex flex-col items-start gap-6 uppercase">
+		{#each nav.link as link (link.key)}
+			<li>
+				{#if link}
+					<PrismicLink
+						field={link}
+						class="text-lg tracking-widest text-white"
+					>
+						{link.text}
+					</PrismicLink>
+				{/if}
+			</li>
+		{/each}
+	</ul>
+</nav>

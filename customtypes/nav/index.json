@@ -1,0 +1,39 @@
+{
+	"format": "custom",
+	"id": "nav",
+	"label": "nav",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"logo_state_start": {
+				"type": "Image",
+				"config": {
+					"label": "Logo state start",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"logo_state_scroll": {
+				"type": "Image",
+				"config": {
+					"label": "Logo state scroll",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"link": {
+				"type": "Link",
+				"config": {
+					"label": "Link",
+					"placeholder": "",
+					"select": null,
+					"allowTargetBlank": false,
+					"allowText": true,
+					"repeat": true,
+					"variants": ["Primary", "Secondary"]
+				}
+			}
+		}
+	}
+}
