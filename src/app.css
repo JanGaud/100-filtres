@@ -1,18 +1,18 @@
-@import "tailwindcss";
-
 @font-face {
     font-family: 'Lazy Dog';
     src: url('/fonts/lazy_dog.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'League Spartan';
     src: url('/fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
+
+@import "tailwindcss";
 
 html {
     scroll-behavior: smooth;
@@ -20,7 +20,8 @@ html {
 }
 
 body {
-    font-family: 'Lazy Dog', sans-serif;
+    /* font-family: 'Lazy Dog', sans-serif; */
+    font-family: 'League Spartan', sans-serif;
 }
 
 h1,
@@ -29,5 +30,5 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Lazy Dog', sans-serif;
 }
