@@ -1,23 +1,25 @@
 @import 'tailwindcss';
 
-@theme {
-	--color-pink-sansfiltre: #ffebfd;
-	--color-green-sansfiltre: #054236;
-	--color-brown-sansfiltre: (#7d5b2e);
-}
-
 @font-face {
-	font-family: 'Lazy Dog';
+	font-family: 'Lazy-Dog';
 	src: url('/fonts/lazy_dog.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'League Spartan';
+	font-family: 'League-Spartan';
 	src: url('/fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
+}
+
+@theme {
+	--color-pink-sansfiltre: #ffebfd;
+	--color-green-sansfiltre: #054236;
+	--color-brown-sansfiltre: (#7d5b2e);
+  --font-league-spartan: 'League-Spartan', sans-serif;
+  --font-lazy-dog: 'Lazy-Dog', sans-serif;
 }
 
 html {
@@ -26,8 +28,7 @@ html {
 }
 
 body {
-	/* font-family: 'Lazy Dog', sans-serif; */
-	font-family: 'League Spartan', sans-serif;
+	font-family: 'League-Spartan', sans-serif;
 }
 
 h1,
@@ -36,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Lazy Dog', sans-serif;
+	font-family: 'Lazy-Dog', sans-serif;
 }
 
 

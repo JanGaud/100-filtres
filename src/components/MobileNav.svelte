@@ -61,7 +61,7 @@
 		</button>
 
 		<!-- Navigation links -->
-		<ul class="flex flex-col gap-8 px-6 pt-24 text-white text-lg">
+		<ul class="flex flex-col gap-8 px-6 pt-24 text-white text-xl tracking-widest uppercase font-lazy-dog">
 			{#each nav.link as link (link.key)}
 				<li>
 					{#if isFilled.link(link)}
