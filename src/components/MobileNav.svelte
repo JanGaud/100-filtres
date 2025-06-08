@@ -18,7 +18,7 @@
 	let menuOpen = false;
 </script>
 
-<nav class="fixed w-full top-0 z-50">
+<nav class="fixed w-full top-0 z-50 bg-white rounded-b-4xl backdrop-blur-lg shadow-lg md:hidden">
 	<!-- Top bar -->
 	<div class="flex items-center justify-between px-6 py-4 z-50">
 		<!-- Logo -->

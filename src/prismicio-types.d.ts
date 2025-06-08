@@ -59,7 +59,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = HomeHeaderSlice;
 
 /**
  * Content for Page documents
@@ -137,6 +137,68 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 export type AllDocumentTypes = NavDocument | PageDocument;
 
 /**
+ * Primary content in *HomeHeader → Default → Primary*
+ */
+export interface HomeHeaderSliceDefaultPrimary {
+	/**
+	 * Image field in *HomeHeader → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_header.default.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Title field in *HomeHeader → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_header.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * SubTitle field in *HomeHeader → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_header.default.primary.subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	subtitle: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for HomeHeader Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHeaderSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HomeHeaderSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *HomeHeader*
+ */
+type HomeHeaderSliceVariation = HomeHeaderSliceDefault;
+
+/**
+ * HomeHeader Shared Slice
+ *
+ * - **API ID**: `home_header`
+ * - **Description**: HomeHeader
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHeaderSlice = prismic.SharedSlice<'home_header', HomeHeaderSliceVariation>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -205,6 +267,10 @@ declare module '@prismicio/client' {
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			HomeHeaderSlice,
+			HomeHeaderSliceDefaultPrimary,
+			HomeHeaderSliceVariation,
+			HomeHeaderSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

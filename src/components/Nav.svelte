@@ -35,7 +35,7 @@
 		{#each nav.link as link (link.key)}
 			<li>
 				{#if link}
-					<PrismicLink field={link} class="text-lg tracking-widest text-white drop-shadow-md hover-underline font-lazy-dog">
+					<PrismicLink field={link} class="text-2xl tracking-widest text-white drop-shadow-md hover-underline font-lazy-dog">
 						{link.text}
 					</PrismicLink>
 				{/if}
