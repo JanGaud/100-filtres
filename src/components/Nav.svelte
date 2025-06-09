@@ -24,7 +24,7 @@
 			<PrismicLink field={accueilLink}>
 				<PrismicImage
 					field={nav.logo_state_start}
-					class="logo-start block w-48 lg:w-52 xl:w-60 drop-shadow drop-shadow-pink-sansfiltre"
+					class="logo-start block w-48 lg:w-52 xl:w-60 drop-shadow-sm drop-shadow-pink-sansfiltre"
 				/>
 			</PrismicLink>
 		{/if}

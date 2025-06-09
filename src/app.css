@@ -31,16 +31,6 @@ body {
 	font-family: 'League-Spartan', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Lazy-Dog', sans-serif;
-}
-
-
 /* hover underline and overline animation */
 .hover-underline {
   background-image: linear-gradient(to right, #ffebfd, #ffebfd 50%, #fff 50%);
