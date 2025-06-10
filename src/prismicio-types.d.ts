@@ -137,6 +137,31 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 export type AllDocumentTypes = NavDocument | PageDocument;
 
 /**
+ * Item in *HomeHeader → Default → Primary → Button*
+ */
+export interface HomeHeaderSliceDefaultPrimaryButtonItem {
+	/**
+	 * Link field in *HomeHeader → Default → Primary → Button*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_header.default.primary.button[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+	/**
+	 * Image field in *HomeHeader → Default → Primary → Button*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_header.default.primary.button[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *HomeHeader → Default → Primary*
  */
 export interface HomeHeaderSliceDefaultPrimary {
@@ -169,6 +194,16 @@ export interface HomeHeaderSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	subtitle: prismic.KeyTextField;
+
+	/**
+	 * Button field in *HomeHeader → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home_header.default.primary.button[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	button: prismic.GroupField<Simplify<HomeHeaderSliceDefaultPrimaryButtonItem>>;
 }
 
 /**
@@ -268,6 +303,7 @@ declare module '@prismicio/client' {
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			HomeHeaderSlice,
+			HomeHeaderSliceDefaultPrimaryButtonItem,
 			HomeHeaderSliceDefaultPrimary,
 			HomeHeaderSliceVariation,
 			HomeHeaderSliceDefault,
