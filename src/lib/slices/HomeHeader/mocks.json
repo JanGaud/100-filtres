@@ -35,53 +35,6 @@
 				"__TYPE__": "FieldContent",
 				"value": "driving",
 				"type": "Text"
-			},
-			"button": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"link",
-								{
-									"key": "e44dacb3-4e66-471c-b5a0-a1254175abc2",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev",
-										"text": "came"
-									}
-								}
-							],
-							[
-								"image",
-								{
-									"__TYPE__": "ImageContent",
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-										"width": 3935,
-										"height": 5894
-									},
-									"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-									"width": 3935,
-									"height": 5894,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"alt": "century",
-									"thumbnails": {}
-								}
-							]
-						]
-					}
-				]
 			}
 		},
 		"items": []

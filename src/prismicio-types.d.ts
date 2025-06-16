@@ -5,6 +5,94 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *menu → Menu Item*
+ */
+export interface MenuDocumentDataMenuItemItem {
+	/**
+	 * Item Title field in *menu → Menu Item*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: menu.menu_item[].item_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	item_title: prismic.KeyTextField;
+
+	/**
+	 * Item Description field in *menu → Menu Item*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: menu.menu_item[].item_description
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	item_description: prismic.KeyTextField;
+
+	/**
+	 * Price Table field in *menu → Menu Item*
+	 *
+	 * - **Field Type**: Table
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: menu.menu_item[].price_table
+	 * - **Documentation**: https://prismic.io/docs/field#table
+	 */
+	price_table: prismic.TableField;
+}
+
+/**
+ * Content for menu documents
+ */
+interface MenuDocumentData {
+	/**
+	 * Menu Title field in *menu*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: menu.menu_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	menu_title: prismic.KeyTextField;
+
+	/**
+	 * Menu Image field in *menu*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: menu.menu_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	menu_image: prismic.ImageField<never>;
+
+	/**
+	 * Menu Item field in *menu*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: menu.menu_item[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	menu_item: prismic.GroupField<Simplify<MenuDocumentDataMenuItemItem>>;
+}
+
+/**
+ * menu document from Prismic
+ *
+ * - **API ID**: `menu`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MenuDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<MenuDocumentData>,
+	'menu',
+	Lang
+>;
+
+/**
  * Content for nav documents
  */
 interface NavDocumentData {
@@ -134,32 +222,7 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = NavDocument | PageDocument;
-
-/**
- * Item in *HomeHeader → Default → Primary → Button*
- */
-export interface HomeHeaderSliceDefaultPrimaryButtonItem {
-	/**
-	 * Link field in *HomeHeader → Default → Primary → Button*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: home_header.default.primary.button[].link
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-	/**
-	 * Image field in *HomeHeader → Default → Primary → Button*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: home_header.default.primary.button[].image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
-}
+export type AllDocumentTypes = MenuDocument | NavDocument | PageDocument;
 
 /**
  * Primary content in *HomeHeader → Default → Primary*
@@ -194,16 +257,6 @@ export interface HomeHeaderSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	subtitle: prismic.KeyTextField;
-
-	/**
-	 * Button field in *HomeHeader → Default → Primary*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: home_header.default.primary.button[]
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	button: prismic.GroupField<Simplify<HomeHeaderSliceDefaultPrimaryButtonItem>>;
 }
 
 /**
@@ -296,6 +349,9 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			MenuDocument,
+			MenuDocumentData,
+			MenuDocumentDataMenuItemItem,
 			NavDocument,
 			NavDocumentData,
 			PageDocument,
@@ -303,7 +359,6 @@ declare module '@prismicio/client' {
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			HomeHeaderSlice,
-			HomeHeaderSliceDefaultPrimaryButtonItem,
 			HomeHeaderSliceDefaultPrimary,
 			HomeHeaderSliceVariation,
 			HomeHeaderSliceDefault,

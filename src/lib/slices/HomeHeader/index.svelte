@@ -2,8 +2,11 @@
 	import { LinkType, type Content } from '@prismicio/client';
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
 	import { usePopIn } from '$lib/actions/usePopIn';
+	import { page } from '$app/stores';
 
 	export let slice: Content.HomeHeaderSlice;
+
+	let menu = $page.data.menu;
 </script>
 
 <section
@@ -31,17 +34,21 @@
 	</div>
 
 	<div class="mt-10 flex items-center justify-center gap-4 md:px-10 lg:px-20">
-		{#each slice.primary.button as item}
-			<div use:usePopIn class="relative w-1/2 h-[200px] rounded-3xl overflow-hidden shadow-md">
+		{#each menu as section}
+			<button
+				use:usePopIn
+				class="relative w-1/2 h-[175px] rounded-3xl overflow-hidden shadow-md"
+			>
 				<span
 					class="absolute inset-0 flex items-center justify-center text-white text-xl lg:text-3xl tracking-wider font-semibold z-10 text-center bg-black/40 pointer-events-none"
 				>
-					{item.link.text}
+					{section.data.menu_title}
 				</span>
-				<PrismicLink field={item.link}>
-					<PrismicImage class="w-full h-full object-cover hover:scale-105 hover:rotate-3 transition-all duration-500" field={item.image} />
-				</PrismicLink>
-			</div>
+				<PrismicImage
+					class="w-full h-full object-cover hover:scale-105 hover:rotate-3 transition-all duration-500"
+					field={section.data.menu_image}
+				/>
+			</button>
 		{/each}
 	</div>
 </section>
