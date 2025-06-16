@@ -147,7 +147,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = HomeHeaderSlice;
+type PageDocumentDataSlicesSlice = MissionSlice | HomeHeaderSlice;
 
 /**
  * Content for Page documents
@@ -287,6 +287,93 @@ type HomeHeaderSliceVariation = HomeHeaderSliceDefault;
 export type HomeHeaderSlice = prismic.SharedSlice<'home_header', HomeHeaderSliceVariation>;
 
 /**
+ * Item in *Mission → Default → Primary → Slide*
+ */
+export interface MissionSliceDefaultPrimarySlideItem {
+	/**
+	 * Title field in *Mission → Default → Primary → Slide*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: mission.default.primary.slide[].title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Description field in *Mission → Default → Primary → Slide*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: mission.default.primary.slide[].description
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	description: prismic.KeyTextField;
+
+	/**
+	 * Image field in *Mission → Default → Primary → Slide*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: mission.default.primary.slide[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Mission → Default → Primary*
+ */
+export interface MissionSliceDefaultPrimary {
+	/**
+	 * Section Title field in *Mission → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: mission.default.primary.section_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	section_title: prismic.KeyTextField;
+
+	/**
+	 * Slide field in *Mission → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: mission.default.primary.slide[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	slide: prismic.GroupField<Simplify<MissionSliceDefaultPrimarySlideItem>>;
+}
+
+/**
+ * Default variation for Mission Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MissionSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<MissionSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Mission*
+ */
+type MissionSliceVariation = MissionSliceDefault;
+
+/**
+ * Mission Shared Slice
+ *
+ * - **API ID**: `mission`
+ * - **Description**: Mission
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MissionSlice = prismic.SharedSlice<'mission', MissionSliceVariation>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -362,6 +449,11 @@ declare module '@prismicio/client' {
 			HomeHeaderSliceDefaultPrimary,
 			HomeHeaderSliceVariation,
 			HomeHeaderSliceDefault,
+			MissionSlice,
+			MissionSliceDefaultPrimarySlideItem,
+			MissionSliceDefaultPrimary,
+			MissionSliceVariation,
+			MissionSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,

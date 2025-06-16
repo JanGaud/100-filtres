@@ -25,7 +25,7 @@
 	<!-- Mobile layout: Nav on top -->
 	<main class="min-h-screen">
 		<MobileNav {nav} />
-		<div class=" px-4 py-10">
+		<div class="px-4 py-10">
 			<slot />
 		</div>
 	</main>
