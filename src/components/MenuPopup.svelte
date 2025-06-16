@@ -57,7 +57,7 @@
 					{#if item.price_table?.body?.rows?.length}
 						<ul class="text-sm mt-3">
 							{#each item.price_table.body.rows as row}
-								<li class="flex flex-wrap justify-center gap-10 items-center text-center">
+								<li class="flex flex-wrap justify-center gap-4 items-center text-center">
 									{#each row.cells as cell}
 										<span class="min-w-[80px] text-center">{cell.content[0]?.text}</span>
 									{/each}
