@@ -93,7 +93,7 @@
 		</div>
 
 	<!-- Carousel -->
-<div class="relative h-[600px] md:h-[400px] overflow-hidden bg-[#ffffff0c] backdrop-blur-2xl mx-6 mt-10  border-2 border-white rounded-3xl shadow">
+<div class="relative h-[600px] md:h-[400px] overflow-hidden bg-[#ffffff0c] backdrop-blur-2xl mx-6 my-10  border-2 border-white rounded-3xl shadow">
 	{#key currentIndex}
 		<div
 			class="absolute inset-0 flex flex-col justify-between md:flex-row items-center md:items-stretch"
