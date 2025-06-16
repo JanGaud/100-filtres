@@ -3,10 +3,19 @@
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
 	import { usePopIn } from '$lib/actions/usePopIn';
 	import { page } from '$app/stores';
+	import MenuPopup from '../../../components/MenuPopup.svelte';
 
 	export let slice: Content.HomeHeaderSlice;
 
 	let menu = $page.data.menu;
+
+	let selectedMenu: typeof menu[0] | null = null;
+	let showPopup = false;
+
+	function openMenu(menuItem: any) {
+		selectedMenu = menuItem;
+		showPopup = true;
+	}
 </script>
 
 <section
@@ -37,10 +46,11 @@
 		{#each menu as section}
 			<button
 				use:usePopIn
+				on:click={() => openMenu(section)}
 				class="relative w-1/2 h-[175px] rounded-3xl overflow-hidden shadow-md"
 			>
 				<span
-					class="absolute inset-0 flex items-center justify-center text-white text-xl lg:text-3xl tracking-wider font-semibold z-10 text-center bg-black/40 pointer-events-none"
+					class="absolute inset-0 flex items-center justify-center uppercase text-white text-lg lg:text-2xl tracking-wider font-semibold z-10 text-center bg-black/40 pointer-events-none"
 				>
 					{section.data.menu_title}
 				</span>
@@ -51,4 +61,7 @@
 			</button>
 		{/each}
 	</div>
+	{#if showPopup}
+		<MenuPopup {selectedMenu} on:close={() => (showPopup = false)} />
+	{/if}
 </section>
