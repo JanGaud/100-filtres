@@ -2,10 +2,8 @@
 
 import HomeHeader from './HomeHeader/index.svelte';
 import Mission from './Mission/index.svelte';
-import RichText from './RichText/index.svelte';
 
 export const components = {
 	home_header: HomeHeader,
-	mission: Mission,
-	rich_text: RichText
+	mission: Mission
 };
