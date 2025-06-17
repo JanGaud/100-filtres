@@ -57,7 +57,7 @@
 			</div>
 
 			<div use:usePopIn class="h-1/2 bg-green-sansfiltre rounded-xl p-4">
-				<h3 class="text-center text-pink-sansfiltre text-2xl uppercase">Suivez-nous</h3>
+				<h3 class="text-center text-pink-sansfiltre text-2xl uppercase tracking-wider">Suivez-nous</h3>
 				<div class="h-[100px] w-full flex items-center justify-center gap-10">
 					{#each settings.social_media as social}
 						<a
