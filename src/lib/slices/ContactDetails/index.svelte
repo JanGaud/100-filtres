@@ -42,17 +42,17 @@
 				{/if}
 
 				{#if settings.company_phone}
-					<p class="flex items-center gap-2">
+					<a href="tel:{settings.company_phone}" class="flex items-center gap-2">
 						<Icon icon="fluent:phone-32-light" class="w-10 h-10" />
 						{settings.company_phone}
-					</p>
+					</a>
 				{/if}
 
 				{#if settings.company_email}
-					<p class="flex items-center gap-2">
+					<a href="mailto:" class="flex items-center gap-2">
 						<Icon icon="material-symbols-light:alternate-email-rounded" class="w-10 h-10" />
 						{settings.company_email}
-					</p>
+					</a>
 				{/if}
 			</div>
 
