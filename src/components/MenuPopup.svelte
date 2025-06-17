@@ -45,7 +45,7 @@
 		</button>
 
 		<!-- Menu Title -->
-		<h2 class="text-3xl md:text-6xl uppercase mb-10 text-center">{selectedMenu.data.menu_title}</h2>
+		<h2 class="text-3xl md:text-6xl uppercase mb-10 text-center font-lazy-dog">{selectedMenu.data.menu_title}</h2>
 
 		<!-- Menu Items -->
 		<ul class="space-y-6 max-w-4xl mx-auto text-center">
