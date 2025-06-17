@@ -112,7 +112,7 @@
 				<!-- Image section -->
 				<div class="w-full md:w-1/2 h-[250px] md:h-full overflow-hidden">
 					<PrismicImage
-						class="w-full h-full object-cover rounded-b-2xl md:rounded-none md:rounded-r-2xl"
+						class="w-full h-full object-cover rounded-b-2xl md:rounded-none md:rounded-r-2xl hover:scale-105 hover:rotate-3 transition-all duration-500"
 						field={slice.primary.slide[currentIndex].image}
 					/>
 				</div>

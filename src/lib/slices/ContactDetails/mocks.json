@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "with_map_and_social",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "cattle",
+				"type": "Text"
+			},
+			"desciption": {
+				"__TYPE__": "FieldContent",
+				"value": "needed",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

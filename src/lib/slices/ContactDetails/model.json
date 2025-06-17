@@ -1,0 +1,32 @@
+{
+  "type": "SharedSlice",
+  "id": "contact_details",
+  "name": "ContactDetails",
+  "variations": [
+    {
+      "id": "with_map_and_social",
+      "name": "With Map and Social",
+      "description": "Contact layout with address, phone, email, map, and social media links.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "desciption": {
+          "type": "Text",
+          "config": {
+            "label": "Desciption",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

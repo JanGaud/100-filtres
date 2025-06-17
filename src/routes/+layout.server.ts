@@ -7,6 +7,7 @@ export async function load({ fetch, request }: { fetch: (input: RequestInfo, ini
     const client = createClient({ fetch });
 
     let nav;
+    let settings;
     let menu: MenuDocument<string>[];
 
     try {
@@ -21,9 +22,16 @@ export async function load({ fetch, request }: { fetch: (input: RequestInfo, ini
         menu = [];
     }
 
+    try {
+        settings = await client.getSingle('settings');
+    } catch (error) {
+        settings = null;
+    }
+
     return {
         nav,
         menu,
+        settings,
     };
 
 }

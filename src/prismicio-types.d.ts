@@ -147,7 +147,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = MissionSlice | HomeHeaderSlice;
+type PageDocumentDataSlicesSlice = ContactDetailsSlice | MissionSlice | HomeHeaderSlice;
 
 /**
  * Content for Page documents
@@ -222,7 +222,173 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = MenuDocument | NavDocument | PageDocument;
+/**
+ * Item in *settings → Social media*
+ */
+export interface SettingsDocumentDataSocialMediaItem {
+	/**
+	 * Social media link field in *settings → Social media*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.social_media[].social_media_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	social_media_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+	/**
+	 * Icon field in *settings → Social media*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.social_media[].icon
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	icon: prismic.KeyTextField;
+}
+
+/**
+ * Content for settings documents
+ */
+interface SettingsDocumentData {
+	/**
+	 * Company name field in *settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.company_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	company_name: prismic.KeyTextField;
+
+	/**
+	 * Company adress field in *settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.company_adress
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	company_adress: prismic.KeyTextField;
+
+	/**
+	 * Company phone field in *settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.company_phone
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	company_phone: prismic.KeyTextField;
+
+	/**
+	 * Company email field in *settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.company_email
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	company_email: prismic.KeyTextField;
+
+	/**
+	 * Company location field in *settings*
+	 *
+	 * - **Field Type**: GeoPoint
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.company_location
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#geopoint
+	 */
+	company_location: prismic.GeoPointField;
+
+	/**
+	 * Social media field in *settings*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.social_media[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	social_media: prismic.GroupField<Simplify<SettingsDocumentDataSocialMediaItem>>;
+}
+
+/**
+ * settings document from Prismic
+ *
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<SettingsDocumentData>,
+	'settings',
+	Lang
+>;
+
+export type AllDocumentTypes = MenuDocument | NavDocument | PageDocument | SettingsDocument;
+
+/**
+ * Primary content in *ContactDetails → With Map and Social → Primary*
+ */
+export interface ContactDetailsSliceWithMapAndSocialPrimary {
+	/**
+	 * Title field in *ContactDetails → With Map and Social → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_details.with_map_and_social.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Desciption field in *ContactDetails → With Map and Social → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_details.with_map_and_social.primary.desciption
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	desciption: prismic.KeyTextField;
+}
+
+/**
+ * With Map and Social variation for ContactDetails Slice
+ *
+ * - **API ID**: `with_map_and_social`
+ * - **Description**: Contact layout with address, phone, email, map, and social media links.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactDetailsSliceWithMapAndSocial = prismic.SharedSliceVariation<
+	'with_map_and_social',
+	Simplify<ContactDetailsSliceWithMapAndSocialPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ContactDetails*
+ */
+type ContactDetailsSliceVariation = ContactDetailsSliceWithMapAndSocial;
+
+/**
+ * ContactDetails Shared Slice
+ *
+ * - **API ID**: `contact_details`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactDetailsSlice = prismic.SharedSlice<
+	'contact_details',
+	ContactDetailsSliceVariation
+>;
 
 /**
  * Primary content in *HomeHeader → Default → Primary*
@@ -402,7 +568,14 @@ declare module '@prismicio/client' {
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
+			SettingsDocument,
+			SettingsDocumentData,
+			SettingsDocumentDataSocialMediaItem,
 			AllDocumentTypes,
+			ContactDetailsSlice,
+			ContactDetailsSliceWithMapAndSocialPrimary,
+			ContactDetailsSliceVariation,
+			ContactDetailsSliceWithMapAndSocial,
 			HomeHeaderSlice,
 			HomeHeaderSliceDefaultPrimary,
 			HomeHeaderSliceVariation,

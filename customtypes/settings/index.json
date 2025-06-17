@@ -1,0 +1,72 @@
+{
+	"format": "custom",
+	"id": "settings",
+	"label": "settings",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"company_name": {
+				"type": "Text",
+				"config": {
+					"label": "Company name",
+					"placeholder": ""
+				}
+			},
+			"company_adress": {
+				"type": "Text",
+				"config": {
+					"label": "Company adress",
+					"placeholder": ""
+				}
+			},
+			"company_phone": {
+				"type": "Text",
+				"config": {
+					"label": "Company phone",
+					"placeholder": ""
+				}
+			},
+			"company_email": {
+				"type": "Text",
+				"config": {
+					"label": "Company email",
+					"placeholder": ""
+				}
+			},
+			"company_location": {
+				"type": "GeoPoint",
+				"config": {
+					"label": "Company location"
+				}
+			},
+			"social_media": {
+				"type": "Group",
+				"config": {
+					"label": "Social media",
+					"repeat": true,
+					"fields": {
+						"social_media_link": {
+							"type": "Link",
+							"config": {
+								"label": "Social media link",
+								"placeholder": "",
+								"select": null,
+								"allowTargetBlank": true,
+								"allowText": true,
+								"repeat": false
+							}
+						},
+						"icon": {
+							"type": "Text",
+							"config": {
+								"label": "Icon",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
