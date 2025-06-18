@@ -66,7 +66,7 @@
 
 <section 
 	bind:this={sectionRef}
-	class="mt-20 min-h-screen -mx-4 md:-mx-6 transition-colors duration-500 rounded-4xl overflow-x-hidden"
+	class="mt-20 lg:min-h-screen 2xl:min-h-[700px] -mx-4 md:-mx-6 transition-colors duration-500 rounded-4xl overflow-x-hidden"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
