@@ -19,11 +19,10 @@
 	data-slice-variation={slice.variation}
 >
 	<h2
-		class="text-3xl md:text-4xl lg:text-5xl py-10 font-bold text-green-sansfiltre text-center px-4 uppercase tracking-wide"
+		class="text-3xl md:text-4xl lg:text-5xl font-bold text-green-sansfiltre text-center px-4 uppercase tracking-wide"
 	>
 		{slice.primary.title}
 	</h2>
-
 	<p class="text-center text-lg text-gray-700 mb-10 px-6 max-w-3xl mx-auto">
 		{slice.primary.desciption}
 	</p>
