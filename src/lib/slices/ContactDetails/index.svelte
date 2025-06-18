@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 	import { get } from 'svelte/store';
 	import Icon from '@iconify/svelte';
+	import ContactForm from '../../../components/ContactForm.svelte';
 
 	export let slice: Content.ContactDetailsSlice;
 
@@ -86,4 +87,5 @@
 			></iframe>
 		</div>
 	</div>
+	<ContactForm/>
 </section>
