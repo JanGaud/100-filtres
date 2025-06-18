@@ -22,6 +22,11 @@
   --font-lazy-dog: 'Lazy-Dog', sans-serif;
 }
 
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 html {
 	scroll-behavior: smooth;
 	background-color: #ffebfd;

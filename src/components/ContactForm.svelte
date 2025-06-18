@@ -104,15 +104,15 @@
 
 			<ul class="text-sm mt-2 space-y-1 pl-6">
 				<li class="flex items-center gap-2">
-					<span class={`w-3 h-3 rounded-full ${nameIsValid ? 'bg-green-600' : 'bg-gray-300'}`}></span>
+					<span class={`w-3 h-3 rounded-full ${nameIsValid ? 'bg-green-600' : 'bg-red-300'}`}></span>
 					Nom complet (2 mots, min. 6 lettres)
 				</li>
 				<li class="flex items-center gap-2">
-					<span class={`w-3 h-3 rounded-full ${emailIsValid ? 'bg-green-600' : 'bg-gray-300'}`}></span>
+					<span class={`w-3 h-3 rounded-full ${emailIsValid ? 'bg-green-600' : 'bg-red-300'}`}></span>
 					Adresse e-mail valide
 				</li>
 				<li class="flex items-center gap-2">
-					<span class={`w-3 h-3 rounded-full ${phoneIsValid ? 'bg-green-600' : 'bg-gray-300'}`}></span>
+					<span class={`w-3 h-3 rounded-full ${phoneIsValid ? 'bg-green-600' : 'bg-red-300'}`}></span>
 					Numéro de téléphone (optionnel)
 				</li>
 			</ul>
@@ -128,7 +128,7 @@
 
 			<ul class="text-sm mt-2 space-y-1 pl-6">
 				<li class="flex items-center gap-2">
-					<span class={`w-3 h-3 rounded-full ${messageIsValid ? 'bg-green-600' : 'bg-gray-300'}`}></span>
+					<span class={`w-3 h-3 rounded-full ${messageIsValid ? 'bg-green-600' : 'bg-red-300'}`}></span>
 					Message d’au moins 5 mots
 				</li>
 			</ul>
