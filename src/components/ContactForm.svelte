@@ -64,11 +64,11 @@
 </script>
 
 <div
-	class="relative p-4 bg-[#ffffffa6] backdrop-blur-2xl rounded-2xl h-auto w-full my-20 border-2 border-green-sansfiltre shadow"
+	class="relative p-4 bg-[#ffffffa6] backdrop-blur-2xl rounded-2xl h-auto w-full my-10 border-2 border-green-sansfiltre shadow"
 >
 	<img
 		class="absolute inset-0 z-0 object-contain opacity-10 pointer-events-none"
-		src="/static/img/SF_Telephone_noir.png"
+		src="./img/SF_Telephone_noir.png"
 		alt="Phone with cups illustration"
 	/>
 

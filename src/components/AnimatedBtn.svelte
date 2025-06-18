@@ -32,8 +32,8 @@
 	}
 
 	onMount(() => {
-		xSet = gsap.quickSetter(flairEl, 'xPercent');
-		ySet = gsap.quickSetter(flairEl, 'yPercent');
+		xSet = gsap.quickSetter(flairEl, 'xPercent') as (val: number) => void;
+		ySet = gsap.quickSetter(flairEl, 'yPercent') as (val: number) => void;
 
 		buttonEl.addEventListener('mouseenter', (e) => {
 			const { x, y } = getXY(e);
