@@ -70,7 +70,7 @@
 	<span class="button__flair absolute inset-0 z-0" bind:this={flairEl}>
 		<span class="button__flair-inner block w-[170%]" style="background-color: {color};"></span>
 	</span>
-	<span class="button__label relative z-10 text-current uppercase tracking-wide font-lazy-dog">{text}</span>
+	<span class="button__label relative z-10 text-current uppercase tracking-wide">{text}</span>
 </button>
 
 <style>

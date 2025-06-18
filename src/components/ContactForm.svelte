@@ -63,7 +63,7 @@
 	}
 </script>
 
-<div class="p-4 bg-[#ffffffa6] backdrop-blur-2xl rounded-2xl h-auto w-full my-20">
+<div class="p-4 bg-[#ffffffa6] backdrop-blur-2xl rounded-2xl h-auto w-full my-20 border-2 border-green-sansfiltre shadow">
 	<form class="max-w-2xl mx-auto">
 		<h2
 			bind:this={formTitle}
@@ -95,7 +95,7 @@
 				class="w-full p-3 border-2 border-green-sansfiltre rounded"
 			/>
 			<div class="flex justify-end">
-				<AnimatedBtn on:click={goToSection2} text="Suivant" type="button" color="#14b8a6" />
+				<AnimatedBtn on:click={goToSection2} text="Suivant" type="button" color="#054236" />
 			</div>
 		</fieldset>
 
@@ -110,7 +110,7 @@
 			></textarea>
 			<div class="flex justify-between">
 				<AnimatedBtn on:click={goToSection1} text="Retour" type="button" color="#ec4899" />
-				<AnimatedBtn type="submit" text="Envoyer" color="#10b981" />
+				<AnimatedBtn type="submit" text="Envoyer" color="#054236" />
 			</div>
 		</fieldset>
 	</form>
