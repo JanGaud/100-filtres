@@ -52,6 +52,15 @@
 							"config": {
 								"label": "Price Table"
 							}
+						},
+						"out_of_stock": {
+							"type": "Boolean",
+							"config": {
+								"label": "Out of stock",
+								"placeholder_false": "false",
+								"placeholder_true": "true",
+								"default_value": false
+							}
 						}
 					}
 				}

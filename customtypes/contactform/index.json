@@ -1,0 +1,146 @@
+{
+	"format": "custom",
+	"id": "contactform",
+	"label": "ContactForm",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"title_section_1": {
+				"type": "Text",
+				"config": {
+					"label": "Title Section 1",
+					"placeholder": ""
+				}
+			},
+			"title_section_2": {
+				"type": "Text",
+				"config": {
+					"label": "Title Section 2",
+					"placeholder": ""
+				}
+			},
+			"full_name_input": {
+				"type": "Group",
+				"config": {
+					"label": "Full Name Input",
+					"repeat": false,
+					"fields": {
+						"input_title": {
+							"type": "Text",
+							"config": {
+								"label": "Input Title",
+								"placeholder": ""
+							}
+						},
+						"input_request": {
+							"type": "Text",
+							"config": {
+								"label": "Input Request",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			},
+			"email_input": {
+				"type": "Group",
+				"config": {
+					"label": "Email Input",
+					"repeat": false,
+					"fields": {
+						"input_title": {
+							"type": "Text",
+							"config": {
+								"label": "Input Title",
+								"placeholder": ""
+							}
+						},
+						"input_request": {
+							"type": "Text",
+							"config": {
+								"label": "Input Request",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			},
+			"phone_input": {
+				"type": "Group",
+				"config": {
+					"label": "Phone Input",
+					"repeat": false,
+					"fields": {
+						"input_title": {
+							"type": "Text",
+							"config": {
+								"label": "Input Title",
+								"placeholder": ""
+							}
+						},
+						"input_request": {
+							"type": "Text",
+							"config": {
+								"label": "Input Request",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			},
+			"message_input": {
+				"type": "Group",
+				"config": {
+					"label": "Message Input",
+					"repeat": false,
+					"fields": {
+						"input_title": {
+							"type": "Text",
+							"config": {
+								"label": "Input Title",
+								"placeholder": ""
+							}
+						},
+						"input_request": {
+							"type": "Text",
+							"config": {
+								"label": "Input Request",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			},
+			"logo": {
+				"type": "Image",
+				"config": {
+					"label": "Logo",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"btn_text_1": {
+				"type": "Text",
+				"config": {
+					"label": "Btn Text 1",
+					"placeholder": ""
+				}
+			},
+			"btn_text_2": {
+				"type": "Text",
+				"config": {
+					"label": "Btn Text 2",
+					"placeholder": ""
+				}
+			},
+			"btn_text_3": {
+				"type": "Text",
+				"config": {
+					"label": "Btn Text 3",
+					"placeholder": ""
+				}
+			}
+		}
+	}
+}

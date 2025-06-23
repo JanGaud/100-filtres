@@ -5,6 +5,236 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *ContactForm → Full Name Input*
+ */
+export interface ContactformDocumentDataFullNameInputItem {
+	/**
+	 * Input Title field in *ContactForm → Full Name Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.full_name_input[].input_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_title: prismic.KeyTextField;
+
+	/**
+	 * Input Request field in *ContactForm → Full Name Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.full_name_input[].input_request
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_request: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ContactForm → Email Input*
+ */
+export interface ContactformDocumentDataEmailInputItem {
+	/**
+	 * Input Title field in *ContactForm → Email Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.email_input[].input_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_title: prismic.KeyTextField;
+
+	/**
+	 * Input Request field in *ContactForm → Email Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.email_input[].input_request
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_request: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ContactForm → Phone Input*
+ */
+export interface ContactformDocumentDataPhoneInputItem {
+	/**
+	 * Input Title field in *ContactForm → Phone Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.phone_input[].input_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_title: prismic.KeyTextField;
+
+	/**
+	 * Input Request field in *ContactForm → Phone Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.phone_input[].input_request
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_request: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ContactForm → Message Input*
+ */
+export interface ContactformDocumentDataMessageInputItem {
+	/**
+	 * Input Title field in *ContactForm → Message Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.message_input[].input_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_title: prismic.KeyTextField;
+
+	/**
+	 * Input Request field in *ContactForm → Message Input*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.message_input[].input_request
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	input_request: prismic.KeyTextField;
+}
+
+/**
+ * Content for ContactForm documents
+ */
+interface ContactformDocumentData {
+	/**
+	 * Title Section 1 field in *ContactForm*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.title_section_1
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title_section_1: prismic.KeyTextField;
+
+	/**
+	 * Title Section 2 field in *ContactForm*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.title_section_2
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title_section_2: prismic.KeyTextField;
+
+	/**
+	 * Full Name Input field in *ContactForm*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.full_name_input[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	full_name_input: prismic.GroupField<Simplify<ContactformDocumentDataFullNameInputItem>>;
+
+	/**
+	 * Email Input field in *ContactForm*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.email_input[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	email_input: prismic.GroupField<Simplify<ContactformDocumentDataEmailInputItem>>;
+
+	/**
+	 * Phone Input field in *ContactForm*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.phone_input[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	phone_input: prismic.GroupField<Simplify<ContactformDocumentDataPhoneInputItem>>;
+
+	/**
+	 * Message Input field in *ContactForm*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.message_input[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	message_input: prismic.GroupField<Simplify<ContactformDocumentDataMessageInputItem>>;
+
+	/**
+	 * Logo field in *ContactForm*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.logo
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
+
+	/**
+	 * Btn Text 1 field in *ContactForm*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.btn_text_1
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	btn_text_1: prismic.KeyTextField;
+
+	/**
+	 * Btn Text 2 field in *ContactForm*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.btn_text_2
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	btn_text_2: prismic.KeyTextField;
+
+	/**
+	 * Btn Text 3 field in *ContactForm*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contactform.btn_text_3
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	btn_text_3: prismic.KeyTextField;
+}
+
+/**
+ * ContactForm document from Prismic
+ *
+ * - **API ID**: `contactform`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactformDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<ContactformDocumentData>,
+	'contactform',
+	Lang
+>;
+
+/**
  * Item in *menu → Menu Item*
  */
 export interface MenuDocumentDataMenuItemItem {
@@ -37,6 +267,17 @@ export interface MenuDocumentDataMenuItemItem {
 	 * - **Documentation**: https://prismic.io/docs/field#table
 	 */
 	price_table: prismic.TableField;
+
+	/**
+	 * Out of stock field in *menu → Menu Item*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: menu.menu_item[].out_of_stock
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	out_of_stock: prismic.BooleanField;
 }
 
 /**
@@ -333,7 +574,12 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-export type AllDocumentTypes = MenuDocument | NavDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes =
+	| ContactformDocument
+	| MenuDocument
+	| NavDocument
+	| PageDocument
+	| SettingsDocument;
 
 /**
  * Primary content in *ContactDetails → With Map and Social → Primary*
@@ -560,6 +806,12 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			ContactformDocument,
+			ContactformDocumentData,
+			ContactformDocumentDataFullNameInputItem,
+			ContactformDocumentDataEmailInputItem,
+			ContactformDocumentDataPhoneInputItem,
+			ContactformDocumentDataMessageInputItem,
 			MenuDocument,
 			MenuDocumentData,
 			MenuDocumentDataMenuItemItem,
