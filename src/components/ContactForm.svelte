@@ -8,8 +8,6 @@
 
 	let formContentData = $page.data.formData.results[0].data;
 
-	console.log('FormData:', formContentData);
-
 	let section1: HTMLFieldSetElement;
 	let section2: HTMLFieldSetElement;
 	let formTitle: HTMLHeadingElement;

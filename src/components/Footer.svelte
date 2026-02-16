@@ -18,14 +18,12 @@
 		return url.startsWith('http://') || url.startsWith('https://') ? url : `https://${url}`;
 	}
 
-	// pull opening hours rows safely
 	$: hoursRows = settings?.opening_hours?.body?.rows ?? [];
 
-	// pull social links safely
 	$: socials = settings?.social_media ?? [];
 </script>
 
-<footer class="mt-20 w-full md:w-[70%] md:ml-auto px-4 bg-green-sansfiltre text-white rounded-t-4xl">
+<footer class="w-full md:w-[70%] md:ml-auto px-4 bg-green-sansfiltre text-white rounded-t-4xl">
 	<div class="py-10 flex flex-col gap-8">
 
 		<!-- Top row -->
