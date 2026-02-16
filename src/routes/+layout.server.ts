@@ -1,37 +1,37 @@
 export const prerender = false;
+
 import { createClient } from '$lib/prismicio';
-import "../app.css";
 import type { MenuDocument } from '../prismicio-types';
 
-export async function load({ fetch, request }: { fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>, request: Request }) {
-    const client = createClient({ fetch });
+export async function load({ fetch }: { fetch: typeof globalThis.fetch }) {
+    let nav = null;
+    let settings = null;
+    let menu: MenuDocument<string>[] = [];
 
-    let nav;
-    let settings;
-    let menu: MenuDocument<string>[];
+    let client;
+    try {
+        client = createClient({ fetch });
+    } catch (e) {
+        return { nav, menu, settings };
+    }
 
     try {
         nav = await client.getSingle('nav');
-    } catch (error) {
+    } catch (e) {
         nav = null;
     }
 
     try {
         menu = await client.getAllByType('menu');
-    } catch (error) {
+    } catch (e) {
         menu = [];
     }
 
     try {
         settings = await client.getSingle('settings');
-    } catch (error) {
+    } catch (e) {
         settings = null;
     }
 
-    return {
-        nav,
-        menu,
-        settings,
-    };
-
+    return { nav, menu, settings };
 }
