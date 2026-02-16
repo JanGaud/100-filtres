@@ -29,19 +29,22 @@
 		subtitle: message
 	};
 
-	// ⚠️ IMPORTANT: static files are served WITHOUT /static in the URL
+	// ⚠️ static files are served WITHOUT /static in the URL
 	const videoSrc = '/video/IMG_9278.mp4';
 </script>
 
 <section class="min-h-screen flex items-center justify-center bg-pink-sansfiltre px-6 py-12">
 	<div class="w-full max-w-3xl text-center space-y-8">
 
-		<!-- 🎥 Video card with overlay text -->
+		<!-- VIDEO CARD -->
 		<div
 			class="
 				relative mx-auto
 				w-full max-w-2xl
-				aspect-[16/9]
+				aspect-[9/16]
+				sm:aspect-[4/5] 
+				md:aspect-[16/9] 
+				max-h-[80vh]
 				rounded-3xl
 				overflow-hidden
 				shadow-2xl
@@ -59,16 +62,16 @@
 				preload="metadata"
 			/>
 
-			<!-- Overlay for readability -->
+			<!-- Overlay -->
 			<div class="absolute inset-0 bg-black/35 backdrop-blur-[1px]" />
 
-			<!-- Text over video -->
-			<div class="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+			<!-- Text -->
+			<div class="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 text-center">
 				<p class="text-xs uppercase tracking-widest text-pink-sansfiltre/90">
 					Erreur {status}
 				</p>
 
-				<h1 class="mt-3 text-3xl md:text-5xl font-lazy-dog text-pink-sansfiltre drop-shadow">
+				<h1 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-lazy-dog text-pink-sansfiltre drop-shadow">
 					{current.title}
 				</h1>
 
@@ -78,12 +81,13 @@
 			</div>
 		</div>
 
-		<!-- Action -->
+		<!-- ACTION -->
 		<a
 			href="/"
 			class="inline-block px-6 py-3 rounded-full bg-green-sansfiltre text-pink-sansfiltre hover:opacity-90 transition"
 		>
 			Retour à l’accueil
 		</a>
+
 	</div>
 </section>
