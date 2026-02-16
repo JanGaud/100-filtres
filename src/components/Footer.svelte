@@ -24,7 +24,7 @@
 </script>
 
 <footer class="w-full md:w-[70%] md:ml-auto px-4 bg-green-sansfiltre text-white rounded-t-4xl">
-	<div class="py-10 flex flex-col gap-8">
+	<div class="py-4 flex flex-col gap-8">
 
 		<!-- Top row -->
 		<div class="w-full flex flex-col md:flex-row gap-8">
