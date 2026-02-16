@@ -42,7 +42,8 @@
 		<PrismicImage class="w-full h-full object-cover rounded-4xl" field={slice.primary.image} />
 	</div>
 
-	<div class="mt-10 flex items-center justify-center gap-4 md:px-10 lg:px-20">
+	<div class="mt-10 flex items-center justify-center gap-4 md:px-10 lg:px-20"
+	id="menu">
 		{#each menu as section}
 			<button
 				use:usePopIn

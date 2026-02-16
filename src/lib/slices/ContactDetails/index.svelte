@@ -17,6 +17,7 @@
 	class="my-20 min-h-screen flex flex-col gap-10"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
+	id={slice.primary.section_id}
 >
 	<h2
 		class="text-3xl md:text-4xl lg:text-5xl font-bold text-green-sansfiltre text-center px-4 uppercase tracking-wide"

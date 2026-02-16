@@ -6,6 +6,13 @@
 	"status": true,
 	"json": {
 		"Main": {
+			"section_id": {
+				"type": "Text",
+				"config": {
+					"label": "Section ID",
+					"placeholder": ""
+				}
+			},
 			"title_section_1": {
 				"type": "Text",
 				"config": {

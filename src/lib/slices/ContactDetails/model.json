@@ -11,6 +11,13 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "section_id": {
+          "type": "Text",
+          "config": {
+            "label": "Section ID",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "Text",
           "config": {

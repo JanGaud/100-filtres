@@ -7,6 +7,7 @@
 
 	import Nav from '../components/Nav.svelte';
 	import MobileNav from '../components/MobileNav.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	let nav = $page.data.nav.data;
 	let isMobile = false;
@@ -38,5 +39,6 @@
 		</div>
 	</main>
 {/if}
+<Footer />
 
 <PrismicPreview {repositoryName} />

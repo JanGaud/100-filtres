@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "needed",
 				"type": "Text"
+			},
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "pipe",
+				"type": "Text"
 			}
 		},
 		"items": []

@@ -66,6 +66,12 @@
 						}
 					}
 				}
+			},
+			"opening_hours": {
+				"type": "Table",
+				"config": {
+					"label": "Opening hours"
+				}
 			}
 		}
 	}

@@ -69,6 +69,7 @@
 	class="mt-20 lg:min-h-screen 2xl:min-h-[700px] -mx-4 md:-mx-6 transition-colors duration-500 rounded-4xl overflow-x-hidden"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
+	id={slice.primary.section_id}
 >
 	<h2 class="text-3xl md:text-4xl lg:text-5xl pt-10 font-bold text-pink-sansfiltre text-center px-4 uppercase tracking-wide">
 		{slice.primary.section_title}

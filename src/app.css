@@ -36,6 +36,7 @@ body {
 	font-family: 'League-Spartan', sans-serif;
 }
 
+
 /* hover underline and overline animation */
 .hover-underline {
   background-image: linear-gradient(to right, #ffebfd, #ffebfd 50%, #fff 50%);
@@ -68,4 +69,37 @@ body {
 
 .hover-underline:hover::before {
   width: 100%;
+}
+
+/* =========================
+   GLOBAL SANSS FILTRE SCROLLBAR
+   ========================= */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #054236 transparent;
+}
+
+/* Chromium / Edge / Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(5, 66, 54, 0.55);
+  /* green-sansfiltre */
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(214, 0, 212, 0.55);
+  /* pink-sansfiltre hover */
 }

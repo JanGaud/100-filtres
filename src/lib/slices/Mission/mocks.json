@@ -33,7 +33,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
@@ -52,12 +51,19 @@
 										"background": "transparent"
 									},
 									"alt": "level",
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							]
 						]
 					}
 				]
+			},
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "yesterday",
+				"type": "Text"
 			}
 		},
 		"items": []
